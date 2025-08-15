@@ -1,6 +1,6 @@
 # Secure Network Administration Project
 
-This repository documents three hands-on projects focused on network security using pfSense firewalls, port forwarding. Each includes configurations, screenshots, and reflections.
+This repository documents three hands-on projects focused on network security using **pfSense firewalls, port forwarding.** Each includes configurations, screenshots, and reflections.
 
 ---
 
