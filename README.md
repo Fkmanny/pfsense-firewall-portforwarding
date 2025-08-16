@@ -1,32 +1,33 @@
-# Secure Network Administration Project
+# Secure Network Administration Projects
 
-This repository documents three hands-on projects focused on network security using **pfSense firewalls, port forwarding.** Each includes configurations, screenshots, and reflections.
+This repository documents three hands-on projects implementing enterprise-grade network security using **pfSense firewalls, port forwarding**. Each project includes detailed configurations, annotated screenshots, and key learnings.
 
 ---
 
-## **Project 1: pfSense Firewall Deployment**
+## **Project 1: Enterprise Firewall Deployment with pfSense**
 ### **Overview**
-Deployed a pfSense firewall in a virtualized environment to segment and secure internal (LAN) and external (WAN) traffic. Key tasks included:
-- Configuring WAN (`10.174.237.25/24`) and LAN (`192.168.237.1/24`) interfaces.
-- Enabling DHCP for internal devices.
-- Validating connectivity between LAN and WAN via ping tests.
+Deployed a pfSense firewall to segment WAN (external) and LAN (internal) traffic in a virtualized environment, enabling secure internet access for internal devices.
 
-### **Key Screenshots**
-1. **pfSense CLI Setup**:  
-   ![CLI Configuration](screenshots/pfsense-cli.png)
-   *Assigned static IPs to WAN/LAN interfaces.*  
+### **Implementation Steps & Screenshots**
+1. **pfSense VM Configuration**  
+   - Assigned WAN: `10.174.237.25/24` (Adapter: `network01`)  
+   - Assigned LAN: `192.168.237.1/24` (Adapter: `network02`) with DHCP range `192.168.237.35-50`  
+   ![pfSense CLI Setup](screenshots/pfsense-cli.png)  
+   *Static IP assignment via console.*
 
-2. **Windows 10 DHCP Fix**:  
-   ![DHCP Repair](screenshots/dhcp-fix.png)  
-   *Resolved "DHCP not enabled" error on the Windows VM.*
+2. **Windows 10 Client Deployment**  
+   - **Fix**: Enabled DHCP on pfSense LAN interface and repaired Windows network settings:  
+   ![Successful DHCP Lease](screenshots/dhcp-fix.png)  
+   *Assigned IP: `192.168.237.35`.*
 
-3. **Validating Connection**:  
-   ![Google Ping](screenshots/validate.png)  
-   *Pinging Google's IP Address from the Windows VM.*
-   
-### **Challenges & Solutions**
-- **Mistyped LAN IP**: Corrected during CLI setup.  
-- **DHCP Issues**: Enabled DHCP on pfSense and repaired Windows network settings.  
+3. **Validation**  
+   - Ping tests from Windows client to WAN (`10.174.237.25`) and Google (`8.8.8.8`):  
+   ![Ping Validation](screenshots/ping-success.png)  
+   *4/4 packets received confirms proper routing.*
+
+### **Key Challenges**
+- **DHCP Misconfiguration**: Required manual intervention on Windows client.  
+- **Interface Assignment**: Critical to bind WAN/LAN to correct adapters (`network01`/`network02`).
 
 ---
 
