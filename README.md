@@ -21,7 +21,7 @@ Deployed a pfSense firewall in a virtualized environment to segment and secure i
    *Resolved "DHCP not enabled" error on the Windows VM.*
 
 3. **Validating Connection**:  
-   ![Google Ping](screenshots/dhcp-fix.png)  
+   ![Google Ping](screenshots/validate.png)  
    *Pinging Google's IP Address from the Windows VM.*
    
 ### **Challenges & Solutions**
