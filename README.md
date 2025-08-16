@@ -39,7 +39,7 @@ Configured pfSense to forward external RDP traffic to two internal Windows machi
 ### **Key Steps**
 1. Assigned static IPs to Windows VMs.  
 2. Created NAT rules in pfSense.  
-3. Disabled Windows Defender Firewall for testing.  
+3. Disabled Windows Defender Firewall for testing.
 
 ### **Screenshots**
 - **NAT Rules**:  
