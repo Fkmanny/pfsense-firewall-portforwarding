@@ -29,27 +29,35 @@ Deployed a pfSense firewall to segment WAN (external) and LAN (internal) traffic
 - **DHCP Misconfiguration**: Required manual intervention on Windows client.  
 - **Interface Assignment**: Critical to bind WAN/LAN to correct adapters (`network01`/`network02`).
 
+
 ---
 
-## **Project 2: Port Forwarding for Remote Desktop**
+
+## **Project 2: Secure Remote Access via Port Forwarding**
 ### **Overview**
-Configured pfSense to forward external RDP traffic to two internal Windows machines:
-- **desk01**: `10.174.237.25:3399` → `192.168.237.60:3389`  
-- **desk02**: `10.174.237.25:3400` → `192.168.237.70:3389`  
+Enabled external RDP access to two internal Windows VMs (`desk01`/`desk02`) through pfSense NAT rules.
 
-### **Key Steps**
-1. Assigned static IPs to Windows VMs.  
-2. Created NAT rules in pfSense.  
-3. Disabled Windows Defender Firewall for testing.
+### **Step-by-Step with Screenshots**
+1. **Static IP Assignment**  
+   - `desk01`: `192.168.237.60`  
+   ![Static IP - desk01](screenshots/desk01-staticip.png)  
+   - `desk02`: `192.168.237.70`  
+   ![Static IP - desk02](screenshots/desk02-staticip.png)  
 
-### **Screenshots**
-- **NAT Rules**:  
-  ![Port Forwarding Rules](screenshots/nat-rules.png)  
-- **Successful RDP Connection**:  
-  ![Remote Desktop](screenshots/rdp-success.png)  
+2. **pfSense NAT Rules**  
+   - Forwarded external ports to internal RDP (3389):  
+     - `3399` → `192.168.237.60:3389`  
+     - `3400` → `192.168.237.70:3389`  
+   ![NAT Rules](screenshots/nat-rules.png)  
+
+3. **Connection Test**  
+   - Successful RDP from home PC to both VMs:  
+   ![RDP to desk01](screenshots/nat-rules.png)  
+   ![RDP to desk02](screenshots/rdp-success.png)  
 
 ### **Lessons Learned**
-- RFC 1918 blocking can interfere with VPN connections; disabled it for testing.  
+- **Windows Firewall**: Must be disabled for external RDP during testing.  
+- **RFC 1918 Blocking**: Disabled on pfSense WAN to allow private IP traffic (e.g., VPN).
 
 ---
 
