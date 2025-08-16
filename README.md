@@ -62,8 +62,12 @@ Enabled external RDP access to two internal Windows VMs (`desk01`/`desk02`) thro
 ---
 
 ## **How to Reproduce**
-1. Download [pfSense ISO](https://www.pfsense.org/download/).  
-2. Set up VMs with WAN/LAN interfaces as described.  
-3. Refer to screenshots for troubleshooting.  
+1. **Requirements**:  
+   - VMware/vSphere environment.  
+   - [pfSense ISO](https://www.pfsense.org/download/).  
+   - Windows 10 VMs for client testing.  
+2. **Steps**:  
+   - Follow interface/IP assignments per project.  
+   - Refer to screenshots for rule configurations.  
 
 ---
