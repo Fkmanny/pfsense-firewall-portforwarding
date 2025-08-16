@@ -1,4 +1,4 @@
-# Secure Network Administration Projects
+# pfSense Firewall Configuration and Portforwarding Project
 
 This repository documents three hands-on projects implementing enterprise-grade network security using **pfSense firewalls, port forwarding**. Each project includes detailed configurations, annotated screenshots, and key learnings.
 
