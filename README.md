@@ -4,12 +4,6 @@ This repository documents three hands-on projects implementing enterprise-grade 
 
 ---
 
-## **Project 1: Enterprise Firewall Deployment with pfSense**
-### **Overview**
-Deployed a pfSense firewall to segment WAN (external) and LAN (internal) traffic in a virtualized environment, enabling secure internet access for internal devices.
-
----
-
 ## Organizational Application
 
 ### Importance to Companies
@@ -17,6 +11,12 @@ This implementation is critical for securing network perimeters and enabling sec
 
 ### Use Case Scenario
 A financial services firm uses this setup to allow employees secure remote desktop access to internal accounting systems from home, ensuring business continuity while maintaining a hardened security posture against external threats.
+
+---
+
+## **Project 1: Enterprise Firewall Deployment with pfSense**
+### **Overview**
+Deployed a pfSense firewall to segment WAN (external) and LAN (internal) traffic in a virtualized environment, enabling secure internet access for internal devices.
 
 ---
 
